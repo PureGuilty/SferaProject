@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор аннуитетных платежей</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Калькулятор аннуитетных платежей</h1>
+        <form id="calculator">
+            <label for="amount">Сумма кредита:</label>
+            <input type="number" id="amount" placeholder="Введите сумму" required>
+            
+            <label for="rate">Годовая процентная ставка (%):</label>
+            <input type="number" id="rate" placeholder="Введите ставку" required>
+            
+            <label for="term">Срок кредита (лет):</label>
+            <input type="number" id="term" placeholder="Введите срок" required>
+            
+            <button type="button" onclick="calculatePayment()">Рассчитать</button>
+        </form>
+        <h2 id="result"></h2>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
