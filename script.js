@@ -11,25 +11,15 @@ function calculatePayment() {
     }
 }
 
-// Функция для получения ключевой ставки
+// Используем заглушку для ключевой ставки
 function fetchKeyRate() {
-    // Используем реальный API
-    fetch('https://api.cbr.ru/v1/keyrate')
-        .then(response => response.json())
-        .then(data => {
-            const keyRate = data[0].value; // Предполагаем, что ставка находится в первом элементе
-            document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
-        })
-        .catch(error => {
-            console.error('Ошибка:', error);
-            const keyRate = 21.00; // Заглушка в случае ошибки
-            document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
-        });
+    const keyRate = 21.00; // Пример заглушки
+    document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
 }
 
 // Запускаем функцию для получения ключевой ставки
 fetchKeyRate();
-setInterval(fetchKeyRate, 3600000); // Обновление каждую час
+// setInterval(fetchKeyRate, 3600000); // Обновление каждую час (не требуется без API)
 
 // Загрузка банковских предложений
 function loadLoanOffers() {
