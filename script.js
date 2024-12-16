@@ -18,4 +18,22 @@ function fetchKeyRate() {
 
 // Запускаем функцию для получения ключевой ставки
 fetchKeyRate();
+function loadLoanOffers() {
+    fetch('loans.json')
+        .then(response => response.json())
+        .then(data => {
+            // Логика для фильтрации и отображения предложений
+            filterLoanOffers(data);
+        })
+        .catch(error => console.error('Ошибка:', error));
+}
+
+function filterLoanOffers(data) {
+    const amount = parseFloat(document.getElementById('amountInput').value);
+    const term = parseFloat(document.getElementById('termInput').value);
+    
+    const filteredOffers = data.filter(offer => offer.amount >= amount && offer.term <= term);
+    
+    displayLoanOffers(filteredOffers);
+}
 
