@@ -19,5 +19,3 @@ function fetchKeyRate() {
 // Запускаем функцию для получения ключевой ставки
 fetchKeyRate();
 
-// Добавляем кнопку для обновления ключевой ставки
-document.getElementById('refreshKeyRate').addEventListener('click', fetchKeyRate);
