@@ -7,28 +7,41 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div class="container">
         <h1>Калькулятор аннуитетных платежей</h1>
+
         <form id="calculator">
             <label for="amount">Сумма кредита:</label>
             <input type="number" id="amount" placeholder="Введите сумму" required>
-            
+
             <label for="rate">Годовая процентная ставка (%):</label>
             <input type="number" id="rate" placeholder="Введите ставку" required>
-            
+
             <label for="term">Срок кредита (лет):</label>
             <input type="number" id="term" placeholder="Введите срок" required>
-            
+
             <button type="button" onclick="calculatePayment()">Рассчитать</button>
         </form>
+
         <h2 id="result"></h2>
+
+        <!-- Новые поля для ввода параметров банковского предложения -->
+        <h2>Введите параметры для получения предложений</h2>
+        
+        <label for="amountInput">Сумма кредита:</label>
+        <input type="number" id="amountInput" placeholder="Сумма кредита" required>
+        
+        <label for="termInput">Срок кредита (в месяцах):</label>
+        <input type="number" id="termInput" placeholder="Срок кредита" required>
+
+        <button id="getOffersButton">Получить предложения</button>
+        
+        <div id="loanOffers"></div> <!-- Контейнер для отображения предложений -->
+
+        <div id="keyRate">Загрузка ключевой ставки...</div> <!-- Элемент для отображения ключевой ставки -->
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-<div id="keyRate">Загрузка ключевой ставки...</div>
-
-<script src="script.js"></script>
-</body>
-</html>
-
