@@ -66,5 +66,16 @@ function displayLoanOffers(offers) {
 
 // Обработчик события для кнопки получения предложений
 document.getElementById('getOffersButton').addEventListener('click', loadLoanOffers);
+function filterLoanOffers(data) {
+    const amount = parseFloat(document.getElementById('amountInput').value);
+    const term = parseFloat(document.getElementById('termInput').value);
+
+    const filteredOffers = data.filter(offer => 
+        amount >= offer.amountRange.min && amount <= offer.amountRange.max &&
+        term >= offer.termRange.min && term <= offer.termRange.max
+    );
+
+    displayLoanOffers(filteredOffers);
+}
 
 
