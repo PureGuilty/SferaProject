@@ -2,86 +2,169 @@
     {
         "bank": "Сбербанк",
         "rate": "29",
-        "amount": "1000000",
-        "term": "12"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 12,
+            "max": 12
+        }
     },
     {
         "bank": "ВТБ",
         "rate": "31.2",
-        "amount": "1000000",
-        "term": "12"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 12,
+            "max": 12
+        }
     },
     {
         "bank": "Т-Банк",
         "rate": "29.9",
-        "amount": "1000000",
-        "term": "12"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 12,
+            "max": 12
+        }
     },
     {
         "bank": "Райффайзен Банк",
         "rate": "29",
-        "amount": "1000000",
-        "term": "12"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 12,
+            "max": 12
+        }
     },
     {
         "bank": "Россельхозбанк",
         "rate": "27.9",
-        "amount": "1000000",
-        "term": "12"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 12,
+            "max": 12
+        }
     },
     {
         "bank": "Газпромбанк",
         "rate": "29.9",
-        "amount": "1000000",
-        "term": "12"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 12,
+            "max": 12
+        }
     },
     {
         "bank": "Совкомбанк",
         "rate": "29.4",
-        "amount": "1000000",
-        "term": "12"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 12,
+            "max": 12
+        }
     },
     {
         "bank": "Сбербанк",
         "rate": "29",
-        "amount": "1000000",
-        "term": "60"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 60,
+            "max": 60
+        }
     },
     {
         "bank": "ВТБ",
         "rate": "31.2",
-        "amount": "1000000",
-        "term": "60"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 60,
+            "max": 60
+        }
     },
     {
         "bank": "Т-Банк",
         "rate": "29.9",
-        "amount": "1000000",
-        "term": "60"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 60,
+            "max": 60
+        }
     },
     {
         "bank": "Райффайзен Банк",
         "rate": "29",
-        "amount": "1000000",
-        "term": "60"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 60,
+            "max": 60
+        }
     },
     {
         "bank": "Россельхозбанк",
         "rate": "27.9",
-        "amount": "1000000",
-        "term": "60"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 60,
+            "max": 60
+        }
     },
     {
         "bank": "Газпромбанк",
         "rate": "29.9",
-        "amount": "1000000",
-        "term": "60"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 60,
+            "max": 60
+        }
     },
     {
         "bank": "Совкомбанк",
         "rate": "29.4",
-        "amount": "1000000",
-        "term": "60"
+        "amountRange": {
+            "min": 1000000,
+            "max": 1000000
+        },
+        "termRange": {
+            "min": 60,
+            "max": 60
+        }
     }
 ]
-
