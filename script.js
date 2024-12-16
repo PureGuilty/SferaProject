@@ -19,8 +19,14 @@ function fetchKeyRate() {
             return response.json();
         })
         .then(data => {
-            const keyRate = data[0].value; // предположим, что ставка находится в первом элементе
-            document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
+            console.log(data); // Проверяем, что возвращает API
+            if (data.length > 0) {
+                const keyRate = data[0].value;
+                document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
+            } else {
+                console.error('Нет данных о ключевой ставке.');
+                document.getElementById('keyRate').innerText = 'Ключевая ставка не найдена.';
+            }
         })
         .catch(error => console.error('Ошибка:', error));
 }
