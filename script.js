@@ -11,28 +11,10 @@ function calculatePayment() {
     }
 }
 function fetchKeyRate() {
-    fetch('https://api.cbr.ru/v1/keyrate')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data); // Проверяем, что возвращает API
-            if (data.length > 0) {
-                const keyRate = data[0].value;
-                document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
-            } else {
-                console.error('Нет данных о ключевой ставке.');
-                document.getElementById('keyRate').innerText = 'Ключевая ставка не найдена.';
-            }
-        })
-        .catch(error => console.error('Ошибка:', error));
+    // Используем заглушку вместо реального API
+    const keyRate = 7.5; // Пример актуальной ключевой ставки
+    document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
 }
 
 // Запускаем функцию для получения ключевой ставки
 fetchKeyRate();
-
-// Обновление каждые 1 час (3600000 миллисекунд)
-setInterval(fetchKeyRate, 3600000);
