@@ -10,17 +10,36 @@ function calculatePayment() {
         document.getElementById('result').innerText = 'Пожалуйста, введите корректные данные.';
     }
 }
+
+// Функция для получения ключевой ставки
 function fetchKeyRate() {
-    // Используем заглушку вместо реального API
-    const keyRate = 21.00; // Пример актуальной ключевой ставки
-    document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
+    // Используем реальный API
+    fetch('https://api.cbr.ru/v1/keyrate')
+        .then(response => response.json())
+        .then(data => {
+            const keyRate = data[0].value; // Предполагаем, что ставка находится в первом элементе
+            document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            const keyRate = 21.00; // Заглушка в случае ошибки
+            document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
+        });
 }
 
 // Запускаем функцию для получения ключевой ставки
 fetchKeyRate();
+setInterval(fetchKeyRate, 3600000); // Обновление каждую час
+
+// Загрузка банковских предложений
 function loadLoanOffers() {
     fetch('loans.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Сеть ответа была не в порядке');
+            }
+            return response.json();
+        })
         .then(data => {
             // Логика для фильтрации и отображения предложений
             filterLoanOffers(data);
@@ -28,6 +47,7 @@ function loadLoanOffers() {
         .catch(error => console.error('Ошибка:', error));
 }
 
+// Фильтрация предложений
 function filterLoanOffers(data) {
     const amount = parseFloat(document.getElementById('amountInput').value);
     const term = parseFloat(document.getElementById('termInput').value);
@@ -36,4 +56,25 @@ function filterLoanOffers(data) {
     
     displayLoanOffers(filteredOffers);
 }
+
+// Отображение предложений
+function displayLoanOffers(offers) {
+    const offersContainer = document.getElementById('loanOffers');
+    offersContainer.innerHTML = ''; // Очистить предыдущие предложения
+
+    if (offers.length === 0) {
+        offersContainer.innerText = 'Нет подходящих предложений.';
+        return;
+    }
+
+    offers.forEach(offer => {
+        const offerElement = document.createElement('div');
+        offerElement.innerText = `Банк: ${offer.bank}, Ставка: ${offer.rate}%, Сумма: ${offer.amount}, Срок: ${offer.term} месяцев`;
+        offersContainer.appendChild(offerElement);
+    });
+}
+
+// Обработчик события для кнопки получения предложений
+document.getElementById('getOffersButton').addEventListener('click', loadLoanOffers);
+
 
