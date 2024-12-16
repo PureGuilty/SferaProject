@@ -52,13 +52,6 @@ h2 {
     text-align: center;
     margin-top: 20px;
 }
-#keyRate {
-    font-size: 20px; /* Размер шрифта */
-    font-weight: bold; /* Жирный шрифт */
-    color: #333; /* Цвет текста */
-    margin-top: 20px; /* Отступ сверху */
-    text-align: center; /* Центрирование текста */
-}
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
