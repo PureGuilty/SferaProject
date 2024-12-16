@@ -12,7 +12,7 @@ function calculatePayment() {
 }
 function fetchKeyRate() {
     // Используем заглушку вместо реального API
-    const keyRate = 21,00; // Пример актуальной ключевой ставки
+    const keyRate = 21.00; // Пример актуальной ключевой ставки
     document.getElementById('keyRate').innerText = `Ключевая ставка: ${keyRate}%`;
 }
 
